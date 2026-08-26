@@ -757,10 +757,9 @@
     });
     root.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', () => { store.set('maison-loc-dismissed', true); }));
 
-    // first-visit open
-    const saved = store.get('maison-location', null);
-    const dismissed = store.get('maison-loc-dismissed', false);
-    if (!saved && !dismissed) setTimeout(() => openModal(root), 650);
+    // Location selection no longer auto-opens on first visit — the site opens
+    // directly to the main content. The modal remains available on demand via
+    // the header/menu location button.
     renderLocPill();
 
     // reopen from pill
